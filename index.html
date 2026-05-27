@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yunth VC 長尺広告プロデュース資料</title>
+  <style>
+    :root {
+      --ink: #24201d;
+      --muted: #6c625b;
+      --line: #ded6cf;
+      --paper: #fffdfa;
+      --soft: #f7f2ed;
+      --rose: #d94b73;
+      --green: #2f7b63;
+      --blue: #2d6d9f;
+      --gold: #9a6a1d;
+      --danger: #b64242;
+      --shadow: 0 10px 28px rgba(74, 55, 40, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.65;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 253, 250, 0.94);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 12px 22px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      font-size: 13px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 6px 8px;
+      border-radius: 6px;
+    }
+
+    nav a:hover {
+      background: var(--soft);
+      color: var(--ink);
+    }
+
+    header {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 44px 22px 24px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--rose);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: 38px;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 920px;
+      color: var(--muted);
+      font-size: 16px;
+      margin: 16px 0 0;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      background: var(--soft);
+      border-radius: 999px;
+      padding: 5px 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 10px 22px 70px;
+    }
+
+    section {
+      margin-top: 34px;
+      padding-top: 4px;
+    }
+
+    h2 {
+      font-size: 24px;
+      line-height: 1.3;
+      margin: 0 0 14px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      font-size: 17px;
+      margin: 0 0 8px;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      padding: 16px;
+      min-width: 0;
+    }
+
+    .card.soft {
+      background: var(--soft);
+      box-shadow: none;
+    }
+
+    .metric {
+      font-size: 28px;
+      line-height: 1.1;
+      font-weight: 850;
+      margin: 4px 0 5px;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 12px;
+      font-weight: 800;
+      background: var(--soft);
+      color: var(--muted);
+      margin: 0 6px 6px 0;
+    }
+
+    .tag.high {
+      background: #ffe9ef;
+      color: var(--rose);
+    }
+
+    .tag.ok {
+      background: #e8f4ef;
+      color: var(--green);
+    }
+
+    .tag.warn {
+      background: #fff2d8;
+      color: var(--gold);
+    }
+
+    .tag.ng {
+      background: #ffe8e6;
+      color: var(--danger);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      display: table;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 13px;
+    }
+
+    th {
+      background: var(--soft);
+      color: var(--muted);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    .note {
+      border-left: 4px solid var(--rose);
+      background: #fff7f9;
+      padding: 12px 14px;
+      color: #5c3844;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .step strong {
+      color: var(--rose);
+    }
+
+    .source-list {
+      display: grid;
+      gap: 8px;
+      font-size: 13px;
+    }
+
+    .source-list a {
+      overflow-wrap: anywhere;
+    }
+
+    .footer {
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 12px;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+
+    @media (max-width: 900px) {
+      h1 {
+        font-size: 30px;
+      }
+
+      .grid.three,
+      .grid.two {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header,
+      main,
+      .topbar-inner {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Yunth VC Production Hub</div>
+      <nav aria-label="資料内ナビゲーション">
+        <a href="#summary">勝ち筋</a>
+        <a href="#evidence">数値</a>
+        <a href="#offer">オファー</a>
+        <a href="#audience">悩み</a>
+        <a href="#creative">CR設計</a>
+        <a href="#shooting">撮影</a>
+        <a href="#risk">表現管理</a>
+        <a href="#sources">リンク</a>
+      </nav>
+    </div>
+  </div>
+
+  <header>
+    <div class="eyebrow">2026-05-27 調査版 / DPro・CR数値・LP・素材条件</div>
+    <h1>Yunth VC 長尺広告プロデュース資料</h1>
+    <p class="lead">結論は「きれいな美容液広告」ではなく、期限と特典で今買う理由を作り、違和感のある冒頭で止めて、LPと同じ悩み選択へ自然に接続する広告を量産すること。撮影では肌の美しさだけでなく、商品本体・特典・限定感・注釈に耐える証拠カットを同日に作り切る。</p>
+    <div class="meta">
+      <span class="pill">Notion DB記録済み</span>
+      <span class="pill">DPro cost_difference = 推定広告費/増分の参考指標</span>
+      <span class="pill">CR数値シート反映</span>
+      <span class="pill">5月CP / Disneyコラボ分岐</span>
+    </div>
+  </header>
+
+  <main>
+    <section id="summary">
+      <h2>勝ち筋サマリー</h2>
+      <div class="grid three">
+        <div class="card">
+          <h3>1. 冒頭は価格か違和感で止める</h3>
+          <p>Yunth上位広告は「高いと思っている人、今がチャンス」「お詫び」「使用期限30秒」など、きれいな世界観より先に視聴停止理由を作っている。</p>
+          <span class="tag high">冒頭3秒</span><span class="tag high">価格不安</span><span class="tag high">限定</span>
+        </div>
+        <div class="card">
+          <h3>2. 商品価値より先にオファーを見せる</h3>
+          <p>50%OFF、1,980円、本品、無料プレゼント、限定セットを視覚で早く出す。長尺でも最初の15秒以内に価格と特典の存在を出す。</p>
+          <span class="tag ok">1,980円</span><span class="tag ok">50%OFF</span><span class="tag ok">無料プレゼント</span>
+        </div>
+        <div class="card">
+          <h3>3. LPの悩み選択と同じ順で話す</h3>
+          <p>LPは肌悩みアンケート型。広告側も「シミ対策」「乾燥毛穴」「ハリツヤ不足」「くすみ」を先に選ばせ、Yunthの個包装・生VCへ接続する。</p>
+          <span class="tag">シミ対策</span><span class="tag">毛穴</span><span class="tag">くすみ</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence">
+      <h2>根拠データ</h2>
+      <div class="grid three">
+        <div class="card">
+          <div class="metric-label">DPro / Yunth 生VC YouTube上位</div>
+          <div class="metric">52,015,707</div>
+          <p>cost_difference。5/6締切、50%OFF、Disneyセット訴求の長尺横型が最大。</p>
+        </div>
+        <div class="card">
+          <div class="metric-label">DPro / Shorts縦型上位</div>
+          <div class="metric">13,679,200</div>
+          <p>cost_difference。横型の勝ち訴求は縦型にも展開可能。</p>
+        </div>
+        <div class="card">
+          <div class="metric-label">Google好調CRメモ</div>
+          <div class="metric">CV 57</div>
+          <p>CPA 10,212円、CTR 0.29%、CPM 407円。低CPMで広く当てる型も残す。</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 18px;">CR数値シートからの優先素材</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>優先</th>
+            <th>CR</th>
+            <th>見るべき理由</th>
+            <th>主要数値</th>
+            <th>撮影への反映</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>最優先</td>
+            <td>YVC_vc0409_チンアナゴバナー_56_a.mp4</td>
+            <td>シート内CPA最良。CV量も13あり、偶然ではなく勝ちの型として扱える。</td>
+            <td>CPA 9,688円 / CV 13 / CVR 25.00% / CTR 0.58%</td>
+            <td>違和感フック、固定バナー風の商品見せ、オファー物量のカットを撮る。</td>
+          </tr>
+          <tr>
+            <td>高</td>
+            <td>YVC_vc0409_チンアナゴユンス_41_b.mp4</td>
+            <td>CV 15で獲得数が最大。CPAも12,586円で十分強い。</td>
+            <td>CV 15 / CPA 12,586円 / CTR 0.74% / CPC 305円</td>
+            <td>同じ冒頭違和感を複数演技で撮り、字幕差し替えで横展開する。</td>
+          </tr>
+          <tr>
+            <td>高</td>
+            <td>YVC_vc0409_桜チンアナゴユンス_64_a.mp4</td>
+            <td>CTR 0.89%で最良。季節感と限定感がクリックに効いている。</td>
+            <td>CTR 0.89% / CV 12 / CPA 12,207円 / CVR 18.18%</td>
+            <td>夏直前、5月末、6月7日締切など時期を画面で伝える小物を撮る。</td>
+          </tr>
+          <tr>
+            <td>検証</td>
+            <td>YVC_vc0409_おかえりユンスちゃん冒頭変更_76_e.mp4</td>
+            <td>CVR 25.00%だがCV 3で母数が小さい。刺されば強いが過信しない。</td>
+            <td>CVR 25.00% / CPA 12,046円 / CV 3</td>
+            <td>「戻ってきた」「やっぱりYunth」文脈をサブ訴求として撮る。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="offer">
+      <h2>オファー設計と絶対ルール</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>5月キャンペーン / 2026年5月11日から5月31日</h3>
+          <p><strong>価格:</strong> 3,960円(税込) から 1,980円(税込)、50%OFF。</p>
+          <p><strong>内容:</strong> VC美白美容液本品、シートマスク、生VC化粧水2連パウチ、レチノール美容液2連パウチ。</p>
+          <div>
+            <span class="tag ok">無料プレゼント OK</span>
+            <span class="tag ok">在庫限り OK</span>
+            <span class="tag ok">数量限定 OK</span>
+            <span class="tag ng">在庫残りわずか NG</span>
+          </div>
+          <p class="note">今回は全て特典扱い。セットと単品を比較したときの金額注釈は不要。</p>
+        </div>
+        <div class="card">
+          <h3>Disneyコラボ / 2026年5月23日から6月7日</h3>
+          <p><strong>限定:</strong> 1,500個限定。合計6,034円、67%OFF相当。</p>
+          <p><strong>内容:</strong> 生VC美白美容液ミキミニ、リポソーム生ビタミンC、リップ美容液、化粧水/クリームパウチ、ハート型ミラー。</p>
+          <div>
+            <span class="tag ok">在庫限り OK</span>
+            <span class="tag ok">数量限定 OK</span>
+            <span class="tag ok">在庫残りわずか OK</span>
+            <span class="tag warn">67%OFF相当は注釈必須</span>
+          </div>
+          <p class="note">注釈: *定期初回 セットと単品を比較したときの金額</p>
+        </div>
+      </div>
+      <div class="card soft" style="margin-top: 14px;">
+        <h3>共通NG</h3>
+        <span class="tag ng">アットコスメ受賞バッジ NG</span>
+        <span class="tag ng">2022年楽天受賞バッジ NG</span>
+        <span class="tag ng">2023年楽天受賞バッジ NG</span>
+        <p>受賞・メディア掲載・著名人素材はフォルダに存在しても、今回使用可否が別。編集前に素材使用可否表で管理する。</p>
+      </div>
+    </section>
+
+    <section id="audience">
+      <h2>悩みとモデル選定</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>LPから逆算した悩み</h3>
+          <ul>
+            <li>シミ対策をしたいが、何を選べばいいかわからない。</li>
+            <li>乾燥による毛穴目立ち、くすみ、ハリツヤ不足が気になる。</li>
+            <li>Yunthは気になるが「少し高い」と感じている。</li>
+            <li>特典が多い今なら買ってもいい、という合理化が必要。</li>
+            <li>定期や解約条件に不安があるため、LP側の安心材料に接続したい。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>モデル方針</h3>
+          <ul>
+            <li><strong>Model A:</strong> 28から34歳。清潔感のあるオフィス/美容好き層。「気になっていたけど高い」導入。</li>
+            <li><strong>Model B:</strong> 35から44歳。大人の肌悩み、復帰購入、朝のメイク前導入。「おかえりYunth」文脈。</li>
+            <li><strong>Hand/Product:</strong> Disneyセット、特典物量、パウチ開封、テクスチャー用。顔出しなしでも量産できる素材。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="creative">
+      <h2>長尺CRの作り方</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>70から90秒の基本構成</h3>
+          <ol>
+            <li>0から3秒: 「高いと思ってる人」「今だけ」「在庫/期限」など停止理由。</li>
+            <li>3から12秒: 肌悩みを一つ選ばせる。シミ対策、乾燥毛穴、くすみ。</li>
+            <li>12から28秒: 使用期限30秒、水を含まない、個包装パウチを実演。</li>
+            <li>28から45秒: 医薬部外品、美白有効成分、角質層までなど注釈前提で説明。</li>
+            <li>45から65秒: 本品、無料プレゼント、限定セットをテーブルで一気に見せる。</li>
+            <li>65から80秒: 価格、送料無料、支払い、定期不安の解消。</li>
+            <li>80から90秒: 期限とCTA。5月CPとDisneyは文言を分ける。</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>撮るべきCRルート</h3>
+          <ul>
+            <li><strong>違和感フック型:</strong> 既存の好調CRを長尺化。最優先。</li>
+            <li><strong>おかえりYunth型:</strong> 使っていた人、気になっていた人に復帰購入の理由を作る。</li>
+            <li><strong>季節/期限型:</strong> 5月末、夏直前、6月7日締切を視覚化。</li>
+            <li><strong>Disneyギフト型:</strong> コラボ限定、ミラー、リップ、リポソームを開封で見せる。</li>
+            <li><strong>悩み別LP直結型:</strong> シミ対策、乾燥毛穴、くすみの3分岐で字幕だけ差し替える。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="shooting">
+      <h2>撮影プロデュース</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>撮影場所</h3>
+          <ul>
+            <li><strong>明るい洗面/ドレッサー:</strong> 朝の使用、パウチ開封、メイク前の肌悩み。</li>
+            <li><strong>自然光のテーブル:</strong> 商品本品、特典、Disneyセットを一望で撮る。</li>
+            <li><strong>白/ピンク系の商品台:</strong> LP・バナー・エンドカード用の抜き差ししやすい素材。</li>
+            <li><strong>生活導線:</strong> 鞄に入れる、洗面棚に置く、届いた箱を開けるなどUGC感の補助。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>当日ショットリスト</h3>
+          <ul>
+            <li>冒頭フック演技 20本: 価格、高い、今だけ、在庫、戻ってきた。</li>
+            <li>商品実演 30本: パウチ開封、手に出す、なじませる、鏡前。</li>
+            <li>オファー物量 20本: 本品、シートマスク、化粧水パウチ、レチノール、Disney特典。</li>
+            <li>悩みカット 15本: メイク前、鏡を見る、頬/目元/毛穴を気にする動き。</li>
+            <li>静止画 20枚以上: LP差し込み、バナー、サムネ、比較用。</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 18px;">スケジュール</h3>
+      <div class="timeline card">
+        <div class="step"><strong>D-5からD-4</strong><span>オファー、使用可能素材、薬機/景表法、受賞表記、Disney素材の使用範囲を確定。</span></div>
+        <div class="step"><strong>D-3</strong><span>モデル2名、手元モデル、衣装、撮影場所、小物、商品現物を確定。肌悩み別の台詞を作る。</span></div>
+        <div class="step"><strong>D-2</strong><span>長尺4本分の台本、縦型/横型の画角、字幕文言、注釈ルールをロック。</span></div>
+        <div class="step"><strong>D-1</strong><span>商品と特典をセットごとに袋分け。NGバッジ混入チェック。撮影順と代替カットを共有。</span></div>
+        <div class="step"><strong>撮影日 09:00</strong><span>搬入、商品台、光、音、背景確認。10:00からModel A、14:00からModel B、16:00からDisney/特典物撮り、18:00撤収。</span></div>
+        <div class="step"><strong>D+1からD+5</strong><span>D+1ラフ、D+2表現確認、D+3初回8本、D+5に長尺4本/短尺8本/冒頭12本/静止画10本を提出。</span></div>
+      </div>
+    </section>
+
+    <section id="risk">
+      <h2>表現管理</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>使いやすい表現</h3>
+          <span class="tag ok">シミ対策</span>
+          <span class="tag ok">メラニンの生成を抑え、しみ・そばかすを防ぐ</span>
+          <span class="tag ok">乾燥による毛穴目立ち</span>
+          <span class="tag ok">角質層まで</span>
+          <span class="tag ok">うるおいによるツヤ</span>
+          <span class="tag ok">無料プレゼント</span>
+          <p>医薬部外品、美白、浸透、毛穴、ツヤは注釈と文脈が命。撮影時点で字幕領域と注釈領域を空ける。</p>
+        </div>
+        <div class="card">
+          <h3>避ける表現</h3>
+          <span class="tag ng">シミが消える</span>
+          <span class="tag ng">治る</span>
+          <span class="tag ng">即効で白くなる</span>
+          <span class="tag ng">5月CPで在庫残りわずか</span>
+          <span class="tag ng">禁止バッジの使用</span>
+          <p>競合の強い訴求をそのまま真似るほどリスクが上がる。Yunthは「新鮮な個包装」「生VC」「今だけの特典」で勝つ。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="deliverables">
+      <h2>納品物</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>種別</th>
+            <th>本数</th>
+            <th>目的</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>長尺 60から90秒</td>
+            <td>4本</td>
+            <td>違和感フック、復帰購入、季節/期限、Disney限定の4ルート。</td>
+          </tr>
+          <tr>
+            <td>短尺 15から30秒</td>
+            <td>8本</td>
+            <td>勝ち冒頭とオファー部分を切り出し、Meta/Shorts/リマーケに展開。</td>
+          </tr>
+          <tr>
+            <td>冒頭検証クリップ</td>
+            <td>12本</td>
+            <td>0から3秒のフックABテスト用。</td>
+          </tr>
+          <tr>
+            <td>静止画/サムネ</td>
+            <td>10枚以上</td>
+            <td>バナー、LP差し込み、サムネ、記事LP用。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="sources">
+      <h2>参照リンクと未確認</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>リンク</h3>
+          <div class="source-list">
+            <a href="https://www.notion.so/0fbee202f653483e8afb2c2f97633a68">Notion DB: Yunth広告プロデュース リサーチDB</a>
+            <a href="https://yunth.jp/lp?u=es-nht-in-sk">Yunth VC LP</a>
+            <a href="https://drive.google.com/drive/u/0/folders/17PRXq9XrrbpEd6dwgB40d_GDyhkwHxRQ">VC 好調CR</a>
+            <a href="https://docs.google.com/spreadsheets/d/109f1u5S-i3U-t4oKT2RizOc14DGhtHawOwagcOeS7lI/edit?gid=0#gid=0">CR数値シート</a>
+            <a href="https://drive.google.com/drive/folders/110bPhyMqzMFNd-kRoey1NHUWiZLZutHF">クライアント素材 1</a>
+            <a href="https://drive.google.com/drive/folders/1qZPLsBJA3zjR2XEhVUFq8e61HtKLSUmA?usp=drive_link">クライアント素材 2</a>
+            <a href="https://drive.google.com/drive/u/0/folders/1JhMcn3TCZ5v8HpVVBH7qKBc44SgOpADK">自社素材</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>次回MTGで確認</h3>
+          <ul>
+            <li>長尺の主戦場は5月キャンペーンか、Disneyコラボか。日付と文言ルールが異なる。</li>
+            <li>「250冠」「800万個」などの実績テキストは、バッジなしなら使用可能か。</li>
+            <li>武井咲素材、メディア掲載、雑誌素材の使用範囲。</li>
+            <li>Yunth VC②の記事URLが途中で切れているため、正式URLを回収する。</li>
+            <li>配信面の優先順位。YouTube長尺、Shorts、Meta、SmartNewsで編集の勝ち方が変わる。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p>更新ルール: 新しいCR数値、オファー変更、NG表現、撮影素材が出たらNotion DBへ1行追加し、このHTMLの該当セクションへ反映する。</p>
+      <p>注意: DProのcost_differenceは売上ではなく、推定広告費/増分を読むための参考指標として扱う。</p>
+    </div>
+  </main>
+</body>
+</html>

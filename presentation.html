@@ -209,6 +209,16 @@
       font-weight: 750;
     }
 
+    .hero-note {
+      margin-top: 20px;
+      padding: 16px 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--pink);
+      border-radius: 8px;
+      font-weight: 800;
+    }
+
     .pill.hot {
       background: #ffe9ef;
       border-color: #f4bfd0;
@@ -251,6 +261,19 @@
       color: var(--rose);
       line-height: 1;
       margin-bottom: 8px;
+    }
+
+    .persona-name {
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .persona-meta {
+      color: var(--rose);
+      font-size: 13px;
+      font-weight: 850;
+      margin-bottom: 10px;
     }
 
     .sequence {
@@ -341,6 +364,41 @@
       color: #b64242;
     }
 
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .asset-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      min-height: 265px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .asset-card img {
+      width: 100%;
+      height: 170px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .asset-card h3 {
+      font-size: 15px;
+    }
+
+    .asset-card p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
     ul {
       margin: 10px 0 0;
       padding-left: 20px;
@@ -359,7 +417,8 @@
       .two,
       .sequence,
       .do-dont,
-      .product-stack {
+      .product-stack,
+      .asset-grid {
         grid-template-columns: 1fr;
       }
       h1 {
@@ -380,14 +439,14 @@
     <div class="deck-nav-inner">
       <div class="brand">Yunth VC Presentation</div>
       <nav aria-label="プレゼン内ナビゲーション">
-        <a href="#s1">結論</a>
-        <a href="#s2">ターゲット</a>
-        <a href="#s3">商品</a>
-        <a href="#s4">見せ方</a>
-        <a href="#s5">台本</a>
+        <a href="#s1">誰に</a>
+        <a href="#s2">強い売り</a>
+        <a href="#s3">勝ち筋</a>
+        <a href="#s4">台本</a>
+        <a href="#s5">プロフィール</a>
         <a href="#s6">撮影</a>
-        <a href="#s7">表現管理</a>
-        <a href="#s8">参照</a>
+        <a href="#s7">表現</a>
+        <a href="#s8">素材</a>
       </nav>
     </div>
   </div>
@@ -395,57 +454,34 @@
   <section class="slide" id="s1">
     <div class="inner split">
       <div>
-        <div class="kicker">Yunth VC 長尺広告プロデュース / プレゼン版</div>
-        <h1>画のピントは個包装。訴求の主語は生ビタミンC。</h1>
-        <p class="lead">24から34歳の予防美容層に向けて、「夏前のシミ予防」から入り、「30秒フレッシュ生VC」で納得させ、「気になっていたYunthを今試す理由」で買ってもらう。</p>
+        <div class="kicker">1. 誰に買ってほしいか</div>
+        <h1>24から34歳の「今から予防美容」層に買ってもらう。</h1>
+        <p class="lead">深いシミ悩みの解決ではなく、夏前に「そろそろちゃんとケアしたい」と思い始めた人へ。日差し、くすみ印象、メイクノリ、隠れシミ予備軍の不安から入る。</p>
         <div class="pill-row">
-          <span class="pill hot">夏前のシミ予防</span>
-          <span class="pill hot">30秒フレッシュ生VC</span>
-          <span class="pill hot">初回1,980円</span>
-          <span class="pill ok">個包装パウチ接写</span>
+          <span class="pill hot">24-34歳</span>
+          <span class="pill hot">予防美容</span>
+          <span class="pill hot">夏前ケア</span>
+          <span class="pill ok">初めての本格VC</span>
         </div>
+        <p class="hero-note">買う理由は「高機能そう」では弱い。夏前の不安に対して、毎回開けたての生ビタミンCを肌にのせる納得感で押す。</p>
       </div>
       <div class="visual">
-        <img src="assets/vc_bihaku_serum.png" alt="Yunth VC美白美容液">
+        <img src="assets/serum_pouch.png" alt="Yunth VC 個包装パウチ">
       </div>
     </div>
   </section>
 
   <section class="slide" id="s2">
-    <div class="inner">
-      <div class="kicker">Target</div>
-      <h2>買ってほしい人は、深いシミ悩み層ではなく「今からケアしたい」人。</h2>
-      <div class="three">
-        <div class="point">
-          <div class="big-number">24-34</div>
-          <h3>主対象</h3>
-          <p>夏前に予防美容を始めたい。濃い悩みより、日差し・くすみ印象・メイクノリの変化が気になり始めている。</p>
-        </div>
-        <div class="point">
-          <div class="big-number">3</div>
-          <h3>プロフィール</h3>
-          <p>美咲 28歳、理央 31歳、奈央 34歳。清潔感・日常感・美容に前向きなリアルさを持たせる。</p>
-        </div>
-        <div class="point">
-          <div class="big-number">Not</div>
-          <h3>追いすぎない層</h3>
-          <p>40代以上の深いシミ悩み、即効変化を求める層、敏感肌向けを強く求める層は主対象にしない。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" id="s3">
     <div class="inner split">
       <div>
-        <div class="kicker">Product Truth</div>
-        <h2>Yunth VCの強みは、成分と形状がセットで伝わること。</h2>
+        <div class="kicker">2. 商品の強い売り</div>
+        <h2>売りは「生ビタミンC」と「個包装」が一体で伝わること。</h2>
         <ul>
-          <li>医薬部外品の導入美容液。洗顔後、化粧水の前に使う。</li>
+          <li>有効成分アスコルビン酸を、生ビタミンCとしてわかりやすく伝える。</li>
+          <li>使用期限30秒という発想で、開けたてを大切にする理由を作れる。</li>
+          <li>1ml×28包の個包装。毎回1包ずつ、使う直前に開ける画が強い。</li>
+          <li>水不使用、とろっと濃密な温感テクスチャー。</li>
           <li>有効成分はアスコルビン酸。美白訴求は「メラニンの生成を抑え、しみ・そばかすを防ぐ」。</li>
-          <li>1ml×28包の個包装。毎回1包ずつ使える。</li>
-          <li>水不使用、とろっとした温感テクスチャー。</li>
-          <li>7つのフリー。ただし敏感肌向けと強く言いすぎない。</li>
         </ul>
       </div>
       <div class="product-stack">
@@ -465,76 +501,93 @@
     </div>
   </section>
 
-  <section class="slide" id="s4">
+  <section class="slide" id="s3">
     <div class="inner">
-      <div class="kicker">Story</div>
-      <h2>プレゼンの流れは、商品説明ではなく購買理由の順番にする。</h2>
-      <div class="sequence">
-        <div class="step">
-          <div class="no">01</div>
-          <h3>隠れシミ予備軍</h3>
-          <p>夏前の不安で止める。</p>
+      <div class="kicker">3. 広告の勝ち筋3本</div>
+      <h2>強い柱だけ残す。便利さは説明、勝ち筋はこの3本。</h2>
+      <div class="three">
+        <div class="point">
+          <div class="big-number">01</div>
+          <h3>夏前のシミ予防で止める</h3>
+          <p>「まだ濃い悩みではないけど不安」な24から34歳に、今始める理由を作る。言い切りは避け、予防美容の文脈にする。</p>
         </div>
-        <div class="step">
-          <div class="no">02</div>
-          <h3>シミ予防</h3>
-          <p>「今からケア」にする。</p>
+        <div class="point">
+          <div class="big-number">02</div>
+          <h3>30秒フレッシュ生VCで納得させる</h3>
+          <p>生ビタミンC、使用期限30秒、個包装を一つの理由にまとめる。画はパウチを開けて肌にのせる瞬間に寄せる。</p>
         </div>
-        <div class="step">
-          <div class="no">03</div>
-          <h3>30秒生VC</h3>
-          <p>Yunthらしい強いフック。</p>
-        </div>
-        <div class="step">
-          <div class="no">04</div>
-          <h3>個包装</h3>
-          <p>開けたての証拠を見せる。</p>
-        </div>
-        <div class="step">
-          <div class="no">05</div>
-          <h3>今試す理由</h3>
-          <p>1,980円・50%OFF・特典。</p>
+        <div class="point">
+          <div class="big-number">03</div>
+          <h3>気になってたYunthを今試す理由にする</h3>
+          <p>本品、無料プレゼント、初回1,980円、50%OFFで最後に行動へつなげる。オファー条件と注釈は見える位置に残す。</p>
         </div>
       </div>
       <p class="quote">「気になっていたYunth」を、夏前の今、試す理由に変える。</p>
     </div>
   </section>
 
-  <section class="slide" id="s5">
+  <section class="slide" id="s4">
     <div class="inner">
-      <div class="kicker">4:00 - 4:30 Script</div>
-      <h2>4分尺は、理解と納得を積み上げて最後にオファーで背中を押す。</h2>
+      <div class="kicker">4. 4分〜4分30秒の喋る台本</div>
+      <h2>喋りは「不安」から入り、個包装の生VCで納得させる。</h2>
       <table class="script-table">
         <thead>
           <tr>
             <th>尺</th>
-            <th>喋ること</th>
+            <th>喋る台本</th>
             <th>見せるもの</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>0:00-0:45</td><td>夏に向けたシミ予防、隠れシミ予備軍。</td><td>日差し、メイク前、頬を見る動き。</td></tr>
-          <tr><td>0:45-1:20</td><td>医薬部外品の導入美容液。洗顔後、化粧水前。</td><td>箱から1包を取り出す。</td></tr>
-          <tr><td>1:20-1:55</td><td>アスコルビン酸、水不使用、温感テクスチャー。</td><td>切り口、液の質感、肌にのせる瞬間。</td></tr>
-          <tr><td>1:55-2:35</td><td>メラニンの生成を抑え、しみ・そばかすを防ぐ。</td><td>注釈余白を空けた塗布カット。</td></tr>
-          <tr><td>2:35-3:10</td><td>1ml×28包。毎回1包で衛生的、持ち運びやすい。</td><td>ポーチ、旅行、洗面棚。</td></tr>
-          <tr><td>3:10-4:20</td><td>7つのフリー、LP限定セット、初回1,980円。</td><td>本品と特典、価格、CTA。</td></tr>
-          <tr><td>4:20-4:30</td><td>夏前のシミ対策に。下のページへ。</td><td>個包装パウチ、本品、CTA。</td></tr>
+          <tr><td>0:00-0:35</td><td>「日差しが強くなる前に、シミ予防を始めたい人へ。まだ目立っていなくても、未来の肌のために今からケアしたいですよね。」</td><td>窓辺の自然光、メイク前に頬を見る動き。</td></tr>
+          <tr><td>0:35-1:05</td><td>「Yunthは、洗顔後に使う医薬部外品の導入美容液。化粧水の前に、1包を開けて使います。」</td><td>箱から1包を取り出し、指先でパウチを見せる。</td></tr>
+          <tr><td>1:05-1:50</td><td>「ポイントは、有効成分アスコルビン酸。いわゆる生ビタミンCを、使う直前に開けること。」</td><td>パウチの切り口、開封直前、液が出る瞬間の接写。</td></tr>
+          <tr><td>1:50-2:25</td><td>「使用期限30秒という発想。水を含まない濃密な一滴を、肌にのせる直前に開けるんです。」</td><td>手のひらで光るとろみ、頬へ伸ばす寄り。</td></tr>
+          <tr><td>2:25-3:00</td><td>「美白有効成分が、メラニンの生成を抑え、しみ・そばかすを防ぐ。夏前のシミ対策にぴったりです。」</td><td>注釈余白を空けた塗布、頬・目元・首元の自然なカット。</td></tr>
+          <tr><td>3:00-3:35</td><td>「1mlずつ28包。毎回1包ずつだから、量で迷わず、ポーチにも入れやすい。」</td><td>28包を並べる、ポーチに1包入れる、洗面棚に置く。</td></tr>
+          <tr><td>3:35-4:15</td><td>「7つのフリーで、毎日のケアに取り入れやすい。気になっていた人は、今なら初回1,980円で始められます。」</td><td>本品、シートマスク、化粧水パウチなど特典を一望。</td></tr>
+          <tr><td>4:15-4:30</td><td>「夏前のシミ対策に。毎回開けたての生ビタミンCを、今日から。」</td><td>個包装パウチを前面、本品とCTA。価格注釈の余白を確保。</td></tr>
         </tbody>
       </table>
+    </div>
+  </section>
+
+  <section class="slide" id="s5">
+    <div class="inner">
+      <div class="kicker">5. モデル/プロフィール案</div>
+      <h2>年齢は上げすぎず、予防美容が似合うリアルな清潔感に寄せる。</h2>
+      <div class="three">
+        <div class="point">
+          <div class="persona-name">美咲 / 28歳</div>
+          <div class="persona-meta">会社員・週末カフェ・美容は口コミ派</div>
+          <p>夏前にメイク前の肌印象が気になり始めた。高すぎる美容医療ではなく、毎日のスキンケアで先回りしたい。</p>
+        </div>
+        <div class="point">
+          <div class="persona-name">理央 / 31歳</div>
+          <div class="persona-meta">営業職・外出多め・日差し不安</div>
+          <p>外回りや休日の外出で、シミ予防をちゃんと始めたい。成分感と使う直前に開ける納得感に反応しやすい。</p>
+        </div>
+        <div class="point">
+          <div class="persona-name">奈央 / 34歳</div>
+          <div class="persona-meta">美容感度高め・成分を見るタイプ</div>
+          <p>流行だけで買わず、医薬部外品・アスコルビン酸・水不使用の説明で納得して買う。落ち着いた語りに向く。</p>
+        </div>
+      </div>
+      <p class="lead">モデル選定は、肌を過度に白く見せるより「清潔感、透明感、日常の説得力」。手元とパウチをきれいに見せられる人を優先する。</p>
     </div>
   </section>
 
   <section class="slide" id="s6">
     <div class="inner split">
       <div>
-        <div class="kicker">Visual Direction</div>
-        <h2>撮影では、パウチを切る瞬間にいちばん価値がある。</h2>
+        <div class="kicker">6. 撮影で何を撮るか</div>
+        <h2>撮るべき主役は、パウチを開けて肌にのせる一連の動き。</h2>
         <ul>
-          <li>冒頭から中盤までは個包装パウチを画面の主役にする。</li>
-          <li>箱や特典は後半のオファーで見せる。</li>
-          <li>液が出る瞬間、手のひらで光る質感、頬にのせる瞬間を必ず撮る。</li>
-          <li>温感は「じんわり」程度。刺激ゼロとは言わない。</li>
+          <li>パウチ単体の寄り、箱から取り出す手元、開封直前の指先。</li>
+          <li>切り口、液が出る瞬間、手のひらで光るとろみ、頬へ伸ばす瞬間。</li>
+          <li>洗顔後の洗面台、化粧水前に置く順番、ポーチに入れる持ち運びカット。</li>
+          <li>後半だけ本品と特典を広げ、初回価格と注釈を見せる。</li>
+          <li>温感は「じんわり」。刺激ゼロ、即効白見え、過度なBefore/Afterは撮らない。</li>
         </ul>
       </div>
       <div class="visual clean">
@@ -545,8 +598,8 @@
 
   <section class="slide" id="s7">
     <div class="inner">
-      <div class="kicker">Expression Control</div>
-      <h2>使う表現と避ける表現は、別シートで共有する。</h2>
+      <div class="kicker">7. 使う表現・避ける表現</div>
+      <h2>生ビタミンCは強く言う。効果断定は言わない。</h2>
       <div class="do-dont">
         <div class="do">
           <h3>使う表現</h3>
@@ -576,23 +629,46 @@
 
   <section class="slide" id="s8">
     <div class="inner">
-      <div class="kicker">Next Action</div>
-      <h2>このプレゼンをもとに、撮影前に決めること。</h2>
-      <div class="three">
-        <div class="point">
-          <h3>1. 採用プロフィール</h3>
-          <p>美咲28歳、理央31歳、奈央34歳から主役を1人選ぶ。</p>
+      <div class="kicker">8. 参考素材画像</div>
+      <h2>素材はローカル化済み。会議中はこの画を見ながら撮影指示に落とす。</h2>
+      <div class="asset-grid">
+        <div class="asset-card">
+          <img src="assets/serum_pouch.png" alt="個包装パウチ">
+          <div>
+            <h3>個包装パウチ</h3>
+            <p>メインビジュアル。開封、液出し、塗布の中心。</p>
+          </div>
         </div>
-        <div class="point">
-          <h3>2. 使用オファー</h3>
-          <p>5月キャンペーンかDisneyコラボかで注釈と在庫表現を分ける。</p>
+        <div class="asset-card">
+          <img src="assets/pouch_4rows.png" alt="4列パウチ">
+          <div>
+            <h3>1ml×28包</h3>
+            <p>個数感、毎回1包、1か月分のイメージ。</p>
+          </div>
         </div>
-        <div class="point">
-          <h3>3. 撮影素材</h3>
-          <p>個包装パウチ、本品、特典、ポーチ、洗面台、日差しカットを準備する。</p>
+        <div class="asset-card">
+          <img src="assets/vc_bihaku_serum.png" alt="Yunth VC美白美容液">
+          <div>
+            <h3>本品</h3>
+            <p>後半のオファーと商品認知で使用。</p>
+          </div>
+        </div>
+        <div class="asset-card">
+          <img src="assets/sheet_mask_pink.png" alt="シートマスク特典">
+          <div>
+            <h3>シートマスク</h3>
+            <p>5月キャンペーン特典の見せ場。</p>
+          </div>
+        </div>
+        <div class="asset-card">
+          <img src="assets/toner_pouch.png" alt="生VC化粧水パウチ">
+          <div>
+            <h3>化粧水パウチ</h3>
+            <p>無料プレゼントのボリューム感。</p>
+          </div>
         </div>
       </div>
-      <p class="lead">詳細な調査台帳は <a href="index.html">Yunth VC Production Hub</a> に残す。プレゼン時はこのページを使う。</p>
+      <p class="lead">詳細な調査台帳は <a href="index.html">Yunth VC Production Hub</a> に残す。表現管理は <a href="expression_guidance_ok.html">OKシート</a> / <a href="expression_guidance_ng.html">NGシート</a> で共有する。</p>
     </div>
   </section>
 </body>

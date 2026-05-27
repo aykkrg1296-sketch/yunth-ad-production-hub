@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yunth VC 広告プロデュース プレゼン版</title>
+  <style>
+    :root {
+      --ink: #241f1f;
+      --muted: #6b6360;
+      --line: #ddd2ca;
+      --paper: #fffdfa;
+      --soft: #f7f0ec;
+      --pink: #e85f86;
+      --rose: #b93e5f;
+      --green: #2f7b63;
+      --gold: #9a6a1d;
+      --blue: #2d6d9f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.55;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: var(--blue);
+      text-underline-offset: 3px;
+    }
+
+    .deck-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 253, 250, 0.95);
+      backdrop-filter: blur(10px);
+    }
+
+    .deck-nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 10px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 13px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      font-size: 12px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 5px 7px;
+      border-radius: 6px;
+    }
+
+    nav a:hover {
+      background: var(--soft);
+      color: var(--ink);
+    }
+
+    .slide {
+      min-height: 88vh;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+    }
+
+    .inner {
+      width: min(1280px, calc(100vw - 44px));
+      margin: 0 auto;
+      padding: 54px 0;
+    }
+
+    .kicker {
+      color: var(--rose);
+      font-size: 13px;
+      font-weight: 850;
+      margin-bottom: 12px;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: 58px;
+      max-width: 920px;
+    }
+
+    h2 {
+      font-size: 42px;
+      max-width: 980px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 820px;
+      margin-top: 18px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .visual {
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #fff4f7, #fffaf3);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .visual.clean {
+      background: #fff;
+    }
+
+    .visual img {
+      max-width: 86%;
+      max-height: 390px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .product-stack {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .product-tile {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      min-height: 250px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .product-tile img {
+      width: 100%;
+      max-height: 170px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 11px;
+      color: var(--muted);
+      background: #fff;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .pill.hot {
+      background: #ffe9ef;
+      border-color: #f4bfd0;
+      color: var(--rose);
+    }
+
+    .pill.ok {
+      background: #e8f4ef;
+      border-color: #b9ddcf;
+      color: var(--green);
+    }
+
+    .three {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .two {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .point {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      min-height: 170px;
+    }
+
+    .point strong {
+      color: var(--rose);
+    }
+
+    .big-number {
+      font-size: 44px;
+      font-weight: 900;
+      color: var(--rose);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .sequence {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      align-items: stretch;
+      margin-top: 22px;
+    }
+
+    .step {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      min-height: 142px;
+    }
+
+    .step .no {
+      color: var(--rose);
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .script-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .script-table th,
+    .script-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 11px 12px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 13px;
+    }
+
+    .script-table th {
+      background: var(--soft);
+      color: var(--muted);
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .script-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .quote {
+      font-size: 26px;
+      line-height: 1.35;
+      font-weight: 850;
+      margin: 20px 0;
+      max-width: 880px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .do-dont {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .do,
+    .dont {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      background: #fff;
+      min-height: 300px;
+    }
+
+    .do h3 {
+      color: var(--green);
+    }
+
+    .dont h3 {
+      color: #b64242;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    @media (max-width: 920px) {
+      .slide {
+        min-height: auto;
+      }
+      .split,
+      .three,
+      .two,
+      .sequence,
+      .do-dont,
+      .product-stack {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 38px;
+      }
+      h2 {
+        font-size: 31px;
+      }
+      .deck-nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck-nav">
+    <div class="deck-nav-inner">
+      <div class="brand">Yunth VC Presentation</div>
+      <nav aria-label="プレゼン内ナビゲーション">
+        <a href="#s1">結論</a>
+        <a href="#s2">ターゲット</a>
+        <a href="#s3">商品</a>
+        <a href="#s4">見せ方</a>
+        <a href="#s5">台本</a>
+        <a href="#s6">撮影</a>
+        <a href="#s7">表現管理</a>
+        <a href="#s8">参照</a>
+      </nav>
+    </div>
+  </div>
+
+  <section class="slide" id="s1">
+    <div class="inner split">
+      <div>
+        <div class="kicker">Yunth VC 長尺広告プロデュース / プレゼン版</div>
+        <h1>画のピントは個包装。訴求の主語は生ビタミンC。</h1>
+        <p class="lead">24から34歳の予防美容層に向けて、「夏前のシミ予防」から入り、「30秒フレッシュ生VC」で納得させ、「気になっていたYunthを今試す理由」で買ってもらう。</p>
+        <div class="pill-row">
+          <span class="pill hot">夏前のシミ予防</span>
+          <span class="pill hot">30秒フレッシュ生VC</span>
+          <span class="pill hot">初回1,980円</span>
+          <span class="pill ok">個包装パウチ接写</span>
+        </div>
+      </div>
+      <div class="visual">
+        <img src="assets/vc_bihaku_serum.png" alt="Yunth VC美白美容液">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="s2">
+    <div class="inner">
+      <div class="kicker">Target</div>
+      <h2>買ってほしい人は、深いシミ悩み層ではなく「今からケアしたい」人。</h2>
+      <div class="three">
+        <div class="point">
+          <div class="big-number">24-34</div>
+          <h3>主対象</h3>
+          <p>夏前に予防美容を始めたい。濃い悩みより、日差し・くすみ印象・メイクノリの変化が気になり始めている。</p>
+        </div>
+        <div class="point">
+          <div class="big-number">3</div>
+          <h3>プロフィール</h3>
+          <p>美咲 28歳、理央 31歳、奈央 34歳。清潔感・日常感・美容に前向きなリアルさを持たせる。</p>
+        </div>
+        <div class="point">
+          <div class="big-number">Not</div>
+          <h3>追いすぎない層</h3>
+          <p>40代以上の深いシミ悩み、即効変化を求める層、敏感肌向けを強く求める層は主対象にしない。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="s3">
+    <div class="inner split">
+      <div>
+        <div class="kicker">Product Truth</div>
+        <h2>Yunth VCの強みは、成分と形状がセットで伝わること。</h2>
+        <ul>
+          <li>医薬部外品の導入美容液。洗顔後、化粧水の前に使う。</li>
+          <li>有効成分はアスコルビン酸。美白訴求は「メラニンの生成を抑え、しみ・そばかすを防ぐ」。</li>
+          <li>1ml×28包の個包装。毎回1包ずつ使える。</li>
+          <li>水不使用、とろっとした温感テクスチャー。</li>
+          <li>7つのフリー。ただし敏感肌向けと強く言いすぎない。</li>
+        </ul>
+      </div>
+      <div class="product-stack">
+        <div class="product-tile">
+          <img src="assets/vc_bihaku_serum.png" alt="VC美白美容液">
+          <h3>本品</h3>
+        </div>
+        <div class="product-tile">
+          <img src="assets/serum_pouch.png" alt="個包装パウチ">
+          <h3>個包装</h3>
+        </div>
+        <div class="product-tile">
+          <img src="assets/pouch_4rows.png" alt="4列パウチ">
+          <h3>1ml×28包</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="s4">
+    <div class="inner">
+      <div class="kicker">Story</div>
+      <h2>プレゼンの流れは、商品説明ではなく購買理由の順番にする。</h2>
+      <div class="sequence">
+        <div class="step">
+          <div class="no">01</div>
+          <h3>隠れシミ予備軍</h3>
+          <p>夏前の不安で止める。</p>
+        </div>
+        <div class="step">
+          <div class="no">02</div>
+          <h3>シミ予防</h3>
+          <p>「今からケア」にする。</p>
+        </div>
+        <div class="step">
+          <div class="no">03</div>
+          <h3>30秒生VC</h3>
+          <p>Yunthらしい強いフック。</p>
+        </div>
+        <div class="step">
+          <div class="no">04</div>
+          <h3>個包装</h3>
+          <p>開けたての証拠を見せる。</p>
+        </div>
+        <div class="step">
+          <div class="no">05</div>
+          <h3>今試す理由</h3>
+          <p>1,980円・50%OFF・特典。</p>
+        </div>
+      </div>
+      <p class="quote">「気になっていたYunth」を、夏前の今、試す理由に変える。</p>
+    </div>
+  </section>
+
+  <section class="slide" id="s5">
+    <div class="inner">
+      <div class="kicker">4:00 - 4:30 Script</div>
+      <h2>4分尺は、理解と納得を積み上げて最後にオファーで背中を押す。</h2>
+      <table class="script-table">
+        <thead>
+          <tr>
+            <th>尺</th>
+            <th>喋ること</th>
+            <th>見せるもの</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0:00-0:45</td><td>夏に向けたシミ予防、隠れシミ予備軍。</td><td>日差し、メイク前、頬を見る動き。</td></tr>
+          <tr><td>0:45-1:20</td><td>医薬部外品の導入美容液。洗顔後、化粧水前。</td><td>箱から1包を取り出す。</td></tr>
+          <tr><td>1:20-1:55</td><td>アスコルビン酸、水不使用、温感テクスチャー。</td><td>切り口、液の質感、肌にのせる瞬間。</td></tr>
+          <tr><td>1:55-2:35</td><td>メラニンの生成を抑え、しみ・そばかすを防ぐ。</td><td>注釈余白を空けた塗布カット。</td></tr>
+          <tr><td>2:35-3:10</td><td>1ml×28包。毎回1包で衛生的、持ち運びやすい。</td><td>ポーチ、旅行、洗面棚。</td></tr>
+          <tr><td>3:10-4:20</td><td>7つのフリー、LP限定セット、初回1,980円。</td><td>本品と特典、価格、CTA。</td></tr>
+          <tr><td>4:20-4:30</td><td>夏前のシミ対策に。下のページへ。</td><td>個包装パウチ、本品、CTA。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="slide" id="s6">
+    <div class="inner split">
+      <div>
+        <div class="kicker">Visual Direction</div>
+        <h2>撮影では、パウチを切る瞬間にいちばん価値がある。</h2>
+        <ul>
+          <li>冒頭から中盤までは個包装パウチを画面の主役にする。</li>
+          <li>箱や特典は後半のオファーで見せる。</li>
+          <li>液が出る瞬間、手のひらで光る質感、頬にのせる瞬間を必ず撮る。</li>
+          <li>温感は「じんわり」程度。刺激ゼロとは言わない。</li>
+        </ul>
+      </div>
+      <div class="visual clean">
+        <img src="assets/serum_pouch.png" alt="美容液パウチ">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="s7">
+    <div class="inner">
+      <div class="kicker">Expression Control</div>
+      <h2>使う表現と避ける表現は、別シートで共有する。</h2>
+      <div class="do-dont">
+        <div class="do">
+          <h3>使う表現</h3>
+          <ul>
+            <li>生ビタミンC</li>
+            <li>毎回開けたて</li>
+            <li>使用期限30秒という発想</li>
+            <li>水を含まない濃密美容液</li>
+            <li>メラニンの生成を抑え、しみ・そばかすを防ぐ</li>
+          </ul>
+          <p><a href="expression_guidance_ok.html">使う表現シートを見る</a></p>
+        </div>
+        <div class="dont">
+          <h3>避ける表現</h3>
+          <ul>
+            <li>シミが消える / 薄くなる</li>
+            <li>即効で白くなる</li>
+            <li>酸化しない / 劣化しない</li>
+            <li>刺激ゼロ / 敏感肌でも安心</li>
+            <li>定期でも簡単にやめられると言い切る</li>
+          </ul>
+          <p><a href="expression_guidance_ng.html">避ける表現シートを見る</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="s8">
+    <div class="inner">
+      <div class="kicker">Next Action</div>
+      <h2>このプレゼンをもとに、撮影前に決めること。</h2>
+      <div class="three">
+        <div class="point">
+          <h3>1. 採用プロフィール</h3>
+          <p>美咲28歳、理央31歳、奈央34歳から主役を1人選ぶ。</p>
+        </div>
+        <div class="point">
+          <h3>2. 使用オファー</h3>
+          <p>5月キャンペーンかDisneyコラボかで注釈と在庫表現を分ける。</p>
+        </div>
+        <div class="point">
+          <h3>3. 撮影素材</h3>
+          <p>個包装パウチ、本品、特典、ポーチ、洗面台、日差しカットを準備する。</p>
+        </div>
+      </div>
+      <p class="lead">詳細な調査台帳は <a href="index.html">Yunth VC Production Hub</a> に残す。プレゼン時はこのページを使う。</p>
+    </div>
+  </section>
+</body>
+</html>
